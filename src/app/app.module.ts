@@ -6,20 +6,31 @@ import { AppComponent } from './app.component';
 import { StubComponent } from './stub/stub.component';
 import { SpyComponent } from './spy/spy.component';
 import { AsyncComponent } from './async/async.component';
+import { BindingsComponent } from './bindings/bindings.component';
+import { TestHostComponent } from './test-host/test-host.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
     AppComponent,
     StubComponent,
     SpyComponent,
-    AsyncComponent
+    AsyncComponent,
+    BindingsComponent,
+    TestHostComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatButtonModule,
+    MatIconModule
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
