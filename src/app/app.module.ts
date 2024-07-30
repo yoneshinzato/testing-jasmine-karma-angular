@@ -11,6 +11,8 @@ import { TestHostComponent } from './test-host/test-host.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { ListPipe } from './pipes/list.pipe';
+import { CopyrightDirective } from './directives/copyright.directive';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { MatIconModule } from '@angular/material/icon';
     AsyncComponent,
     BindingsComponent,
     TestHostComponent,
+    ListPipe,
+    CopyrightDirective,
   ],
   imports: [
     BrowserModule,
