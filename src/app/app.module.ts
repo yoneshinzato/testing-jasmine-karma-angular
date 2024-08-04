@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +15,7 @@ import { ListPipe } from './pipes/list.pipe';
 import { CopyrightDirective } from './directives/copyright.directive';
 import { SearchComponent } from './search/search.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AppErrorHandler } from './app-error-handler';
 
 @NgModule({
   declarations: [
@@ -34,10 +35,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     MatButtonModule,
     MatIconModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    { provide: ErrorHandler, useClass: AppErrorHandler }
   ],
   bootstrap: [AppComponent]
 })
